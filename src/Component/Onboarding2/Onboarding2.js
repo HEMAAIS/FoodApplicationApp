@@ -1,38 +1,46 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Group1 from '../../Image/Group1.png'
 
-export default function Onboarding2() {
-    return (
-        <View style={styles.container}>
-            <View>
-                <Image source={Group1} style={styles.Group1} />
-            </View>
-            <View style={styles.container1}>
-                <View >
-                    <Text style={styles.text}>Track your Comfort {'\n'} Food here</Text>
-                </View>
-                <View>
-                    <Text style={styles.text1}>Here You Can find a chef or dish for every {'\n'} taste and color. Enjoy!</Text>
-                </View>
-            </View>
 
-        </View>
+export default function Onboarding2({ navigation }) {
+    return (
+        <SafeAreaView>
+            <View style={styles.container}>
+                <View style={{ marginTop: 45 }}></View>
+                <TouchableOpacity onPress={() => navigation.navigate('Onboarding3')} >
+                    <View>
+                        <Image source={Group1} style={styles.Group1} />
+                    </View>
+                </TouchableOpacity>
+                <View style={styles.container1}>
+                    <View style={{ marginTop: 35 }}>
+                        <Text style={styles.text}>Track your Comfort {'\n'} Food here</Text>
+                    </View>
+                    <View >
+                        <Text style={styles.text1}>Here You Can find a chef or dish for every {'\n'} taste and color. Enjoy!</Text>
+                    </View>
+                    <View style={{ marginTop: 150 }}></View>
+                </View>
+            </View>
+        </SafeAreaView>
+
     )
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fffff'
+        margin: 5,
+        backgroundColor: '#FFFFFF',
+        alignItems: 'center'
     },
     Group1: {
-        width: 390,
-        height: 415
+        width: 370,
+        height: 370
     },
     container1: {
-        flex: 2,
-        alignItems: 'center',
-        marginTop:20
+        backgroundColor: '#FFFFFF',
+
+        alignItems: 'center'
     },
     text: {
         color: '#000000',

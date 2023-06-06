@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Text, View, Image, StyleSheet, } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity, } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
@@ -7,9 +7,10 @@ import pic from '../../Image/pic.png'
 import food from '../../Image/food.png'
 import Logo from '../../Image/Logo.png'
 
+
 SplashScreen.preventAutoHideAsync();
 
-export default function Onboarding1() {
+export default function Onboarding1({ navigation }) {
     const [appIsReady, setAppIsReady] = useState(false);
 
     useEffect(() => {
@@ -34,22 +35,33 @@ export default function Onboarding1() {
         return null;
     }
     return (
-        <View style={styles.container}
+        <View style={{ backgroundColor: '#FFEEDA' }}
             onLayout={onLayoutRootView}>
             {/* <Text>SplashScreen Demo! 👋</Text>
             <Entypo name="rocket" size={50} color={'green'} /> */}
-            {/* <Image source={pic} style={{height:780,width:383}} /> */}
-            <Image source={Logo} style={{ height: 127, width: 130, position:'absolute',}} />
-            <Image source={food} style={{ height: 213.5, width: 210.5,marginTop:520,marginLeft:-178}} />
+            <View style={styles.container1}>
+                <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
+                    <Image source={pic} style={{ height: 718 }} />
+                </TouchableOpacity>
+            </View>
+            {/* <View style={styles.container1}>
+                <View style={{ marginTop: 34 }}></View>
+                <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
+                    <View>
+                        <Image source={Logo} style={{ height: 127, width: 130, alignItems: 'center', marginTop: 280 }}/>
+                    </View>
+                </TouchableOpacity>
+                <View>
+                    <Image source={food} style={{ height: 213.5, width: 210.5, marginTop: 95, marginLeft: -110 }} />
+                </View>
+            </View > */}
+
         </View>
     );
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    container1: {
         alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: '#FFEEDA',
-      
     }
 });
