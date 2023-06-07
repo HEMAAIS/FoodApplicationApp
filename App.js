@@ -14,6 +14,11 @@ import Success from './src/Component/Success/Success';
 import Home from './src/Component/Home/Home';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import Burger from './src/Component/Burger/Burger';
+import Soup from './src/Component/Soup/Soup';
+import XBurger from './src/Component/XBurger/XBurger';
+import Chat from './src/Component/Chat/Chat';
+import Chat1 from './src/Component/Chat1/Chat1';
 
 const Stack = createStackNavigator();
 function App() {
@@ -30,7 +35,17 @@ function App() {
       {/* <UploadPreview/> */}
       {/* <SetLocation/> */}
       {/* <Success /> */}
-      <Home/>
+      {/* <Home /> */}
+      {/* <Burger /> */}
+      {/* <XBurger/> */}
+      {/* <Soup/> */}
+      {/* <Chat/> */}
+      <Chat1/>
+
+      {/* <NavigationContainer>
+      <Home />
+     </NavigationContainer> */}
+
     </View>
     // <NavigationContainer>
     //   <Stack.Navigator screenOptions={{
@@ -48,6 +63,10 @@ function App() {
     //     <Stack.Screen name="SetLocation" component={SetLocation} />
     //     <Stack.Screen name="Success" component={Success} />
     //     <Stack.Screen name="Home" component={Home} />
+    //     <Stack.Screen name="Burger" component={Burger} />
+    //     <Stack.Screen name="XBurger" component={XBurger} />
+    //     <Stack.Screen name="Soup" component={Soup} />
+    //     <Stack.Screen name="Chat" component={Chat} />
     //   </Stack.Navigator>
     // </NavigationContainer>
   );

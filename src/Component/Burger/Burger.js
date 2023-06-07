@@ -5,19 +5,21 @@ import Filter from '../../Image/Filter.png'
 import ice from '../../Image/ice.png'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button } from 'react-native-elements';
-import burger from '../../Image/burger.png'
 import home from '../../Image/home.png'
 import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chat from '../../Image/chat.png'
-import cup from '../../Image/cup.png'
-import biscuts from '../../Image/biscuts.png'
+import burger from '../../Image/burger.png'
 import roll from '../../Image/roll.png'
+import pizza from '../../Image/pizza.png'
+import beef from '../../Image/beef.png'
+import b1 from '../../Image/b1.png'
+import b2 from '../../Image/b2.png'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
 
-const Home = ({ navigation }) => {
+const Burger = ({ navigation }) => {
 
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -44,30 +46,10 @@ const Home = ({ navigation }) => {
                         <MaterialCommunityIcons name='bell-badge-outline' size={35} color={'#EC2578'} style={{ marginLeft: 20 }} />
                     </View>
                 </View>
-                <View style={styles.container1}>
-                    <View style={{ marginTop: 25 }}>
-                        <Text style={styles.text1}>Special Deal For{'\n'}December</Text>
-                    </View>
-                    <View style={{ marginLeft: 18, marginTop: 20 }}>
-                        <Button
-                            title="Buy Now"
-                            buttonStyle={{ width: 99, height: 35, borderRadius: 4, backgroundColor: '#FFFFFF', }}
-                            titleStyle={{ fontSize: 14, fontWeight: 500, color: '#EC2578', textAlign: 'center' }}
-                        />
-                    </View>
-                    <View style={{ marginTop: -118, marginLeft: 203 }}>
-                        <Image source={ice} style={styles.ice} />
-                    </View>
-                </View>
                 <View style={styles.container2}>
                     <View style={styles.head}>
                         <View style={{ marginLeft: 5 }}>
                             <Text style={styles.texta}>Popular Menu</Text>
-                        </View>
-                        <View style={{ marginLeft: 178 }}>
-                            <TouchableOpacity onPress={() => navigation.navigate('Burger')}>
-                                <Text style={styles.textb}>View More</Text>
-                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={styles.Burgers}>
@@ -82,31 +64,36 @@ const Home = ({ navigation }) => {
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
-                    <View style={styles.head}>
-                        <View style={{ marginLeft: 5 }}>
-                            <Text style={styles.texta}>Deserts</Text>
+                    <View style={styles.Burgers}>
+                        <View style={styles.A}>
+                            <Image source={b1} />
+                            <Text style={styles.input}>Burger</Text>
+                            <Text style={styles.input1}>2$</Text>
                         </View>
-                        <View style={{ marginLeft: 220 }}>
-                            <Text style={styles.textb}>View More</Text>
+                        <View style={styles.A}>
+                            <Image source={b2} />
+                            <Text style={styles.input}>Sandwich</Text>
+                            <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
                     <View style={styles.Burgers}>
                         <View style={styles.A}>
-                            <Image source={biscuts} />
-                            <Text style={styles.input}>Biscuts</Text>
+                            <Image source={pizza} />
+                            <Text style={styles.input}>Pizza roll</Text>
                             <Text style={styles.input1}>2$</Text>
                         </View>
                         <View style={styles.A}>
-                            <Image source={cup} />
-                            <Text style={styles.input}>Cup Cake</Text>
+                            <Image source={beef} />
+                            <Text style={styles.input}>Beef burger</Text>
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
                 </View>
+
                 <View style={styles.container3}>
                     <View style={styles.appbar}>
                         <View>
-                            <TouchableOpacity onPress={() => navigation.navigate('XBurger')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                                 <Image source={home} />
                             </TouchableOpacity>
                         </View>
@@ -132,7 +119,7 @@ const Home = ({ navigation }) => {
         </ScrollView>
     )
 }
-export default Home
+export default Burger
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FEFEFF',
@@ -229,7 +216,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     container3: {
-        // marginTop: -65
+        //   marginTop:-65
     },
     appbar: {
         width: 335,
