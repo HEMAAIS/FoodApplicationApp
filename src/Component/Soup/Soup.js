@@ -48,7 +48,7 @@ const Soup = ({ navigation }) => {
                 </View>
                 <View style={styles.container1}>
                     <View style={{ marginLeft: 25, marginTop: 6, marginBottom: 5 }}>
-                        <Button onPress={() => navigation.navigate('Soup')}
+                        <Button onPress={() => navigation.navigate('Home')}
                             title="Soup"
                             buttonStyle={{ width: 112, height: 44, borderRadius: 4, backgroundColor: '#FFEEDA', }}
                             titleStyle={{ fontSize: 14, fontWeight: 500, color: '#646464', textAlign: 'center' }}

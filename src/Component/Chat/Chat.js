@@ -10,7 +10,7 @@ import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chats from '../../Image/chats.png'
 
-const Chat = () => {
+const Chat = ({navigation}) => {
     return (
         <SafeAreaView>
             <View style={styles.container}>
@@ -97,7 +97,7 @@ const Chat = () => {
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Chat1')}>
                                 <Image source={chats} />
                             </TouchableOpacity>
                         </View>

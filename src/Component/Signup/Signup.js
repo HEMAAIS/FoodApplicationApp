@@ -36,7 +36,7 @@ export default function Signup({navigation}) {
                         </View>
                         <View style={{ alignItems: 'center', marginTop: 25 }}>
                             <View style={styles.inputContainer}>
-                                <TextInput style={styles.input1} placeholder='Name' />
+                                <TextInput style={styles.input1} placeholder='Name'  placeholderTextColor={'#000000'} />
                                 <Ionicons style={styles.icon}
                                     name='person-sharp'
                                     size={22}
@@ -44,7 +44,7 @@ export default function Signup({navigation}) {
                                 />
                             </View>
                             <View style={styles.inputContainer}>
-                                <TextInput style={styles.input1} placeholder='Email' />
+                                <TextInput style={styles.input1} placeholder='Email'  placeholderTextColor={'#000000'} />
                                 <Icon style={styles.icon}
                                     name='email'
                                     size={22}
@@ -52,7 +52,7 @@ export default function Signup({navigation}) {
                                 />
                             </View>
                             <View style={styles.inputContainer}>
-                                <TextInput style={styles.input1} placeholder='Password' />
+                                <TextInput style={styles.input1} placeholder='Password'  placeholderTextColor={'#000000'} />
                                 <FontAwesome style={styles.icon}
                                     name='lock'
                                     size={22}

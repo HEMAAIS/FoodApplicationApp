@@ -24,7 +24,7 @@ export default function SignupProcess({navigation}) {
                 </View>
                 <View style={styles.container2}>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Full Name' />
+                        <TextInput style={styles.input1} placeholder='Full Name'  placeholderTextColor={'#000000'}/>
                         <Ionicons style={styles.icon}
                             name='person-sharp'
                             size={22}
@@ -32,7 +32,7 @@ export default function SignupProcess({navigation}) {
                         />
                     </View>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Country' />
+                        <TextInput style={styles.input1} placeholder='Country'  placeholderTextColor={'#000000'} />
                         <AntDesign style={styles.icon}
                             name='earth'
                             size={22}
@@ -45,7 +45,7 @@ export default function SignupProcess({navigation}) {
                         />
                     </View>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Mobile Number' />
+                        <TextInput style={styles.input1} placeholder='Mobile Number'  placeholderTextColor={'#000000'} />
                         <Icon style={styles.icon}
                             name='phone'
                             size={22}

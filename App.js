@@ -19,12 +19,16 @@ import Soup from './src/Component/Soup/Soup';
 import XBurger from './src/Component/XBurger/XBurger';
 import Chat from './src/Component/Chat/Chat';
 import Chat1 from './src/Component/Chat1/Chat1';
+import CallRinging from './src/Component/CallRinging/CallRinging';
+import Call from './src/Component/Call/Call';
+import VoucherPromo from './src/Component/VoucherPromo/VoucherPromo';
+import Promo from './src/Component/Promo/Promo';
 
 const Stack = createStackNavigator();
 function App() {
   return (
     <View style={styles.container}>
-      {/* <Onboarding1 /> */}
+      <Onboarding1 />
       {/* <Onboarding2 /> */}
       {/* <Onboarding3/> */}
       {/* <Login/> */}
@@ -40,8 +44,12 @@ function App() {
       {/* <XBurger/> */}
       {/* <Soup/> */}
       {/* <Chat/> */}
-      <Chat1/>
-
+      {/* <Chat1/> */}
+      {/* <CallRinging /> */}
+      {/* <Call /> */}
+      {/* <VoucherPromo/> */}
+      {/* <Promo/> */}
+    
       {/* <NavigationContainer>
       <Home />
      </NavigationContainer> */}
@@ -67,6 +75,9 @@ function App() {
     //     <Stack.Screen name="XBurger" component={XBurger} />
     //     <Stack.Screen name="Soup" component={Soup} />
     //     <Stack.Screen name="Chat" component={Chat} />
+    //     <Stack.Screen name="Chat1" component={Chat1} />
+    //     <Stack.Screen name="CallRinging" component={CallRinging} />
+    //     <Stack.Screen name="Call" component={Call} />
     //   </Stack.Navigator>
     // </NavigationContainer>
   );

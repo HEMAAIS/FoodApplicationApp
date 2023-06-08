@@ -34,7 +34,7 @@ export default function Login({navigation}) {
                         </View>
                         <View style={{ alignItems: 'center', marginTop: 20 }}>
                             <View style={styles.inputContainer}>
-                                <TextInput style={styles.input} placeholder='example@gmail.com' />
+                                <TextInput style={styles.input} placeholder='example@gmail.com'  placeholderTextColor={'#000000'}/>
                                 <Ionicons style={styles.icon}
                                     name='person-sharp'
                                     size={18}
@@ -42,7 +42,7 @@ export default function Login({navigation}) {
                                 />
                             </View>
                             <View style={styles.inputContainer}>
-                                <TextInput style={styles.input1} placeholder='Password' />
+                                <TextInput style={styles.input1} placeholder='Password' placeholderTextColor={'#000000'} />
                                 <FontAwesome style={styles.icon}
                                     name='lock'
                                     size={18}

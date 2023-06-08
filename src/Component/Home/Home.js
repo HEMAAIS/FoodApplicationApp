@@ -6,6 +6,7 @@ import ice from '../../Image/ice.png'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button } from 'react-native-elements';
 import burger from '../../Image/burger.png'
+import b1 from '../../Image/b1.png'
 import home from '../../Image/home.png'
 import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
@@ -13,6 +14,8 @@ import chat from '../../Image/chat.png'
 import cup from '../../Image/cup.png'
 import biscuts from '../../Image/biscuts.png'
 import roll from '../../Image/roll.png'
+import Homemade from '../../Image/Homemade.png'
+import carrot from '../../Image/carrot.png'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
@@ -99,6 +102,50 @@ const Home = ({ navigation }) => {
                         <View style={styles.A}>
                             <Image source={cup} />
                             <Text style={styles.input}>Cup Cake</Text>
+                            <Text style={styles.input1}>3$</Text>
+                        </View>
+                    </View>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 6 }}>
+                            <Text style={styles.texta}>Burger</Text>
+                        </View>
+                        <View style={{ marginLeft: 230 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('XBurger')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={styles.Burgers}>
+                        <View style={styles.A}>
+                            <Image source={b1} />
+                            <Text style={styles.input}>Burger</Text>
+                            <Text style={styles.input1}>2$</Text>
+                        </View>
+                        <View style={styles.A}>
+                            <Image source={burger} />
+                            <Text style={styles.input}>Zinger Burger</Text>
+                            <Text style={styles.input1}>2$</Text>
+                        </View>
+                    </View>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 6 }}>
+                            <Text style={styles.texta}>Soup</Text>
+                        </View>
+                        <View style={{ marginLeft: 233 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Soup')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={styles.Burgers}>
+                        <View style={styles.A}>
+                            <Image source={Homemade} />
+                            <Text style={styles.input}>Tomatto Soup</Text>
+                            <Text style={styles.input1}>2$</Text>
+                        </View>
+                        <View style={styles.A}>
+                            <Image source={carrot} />
+                            <Text style={styles.input}>Carrot soup</Text>
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>

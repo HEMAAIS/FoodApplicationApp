@@ -41,9 +41,11 @@ export default function Onboarding1({ navigation }) {
             <Entypo name="rocket" size={50} color={'green'} /> */}
             <View style={styles.container1}>
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
-                    <Image source={pic} style={{ height: 718 }} />
+                    <Image source={pic} style={{ height: 730 }} />
                 </TouchableOpacity>
             </View>
+            <View style={{ marginTop: 150 }}></View>
+
             {/* <View style={styles.container1}>
                 <View style={{ marginTop: 34 }}></View>
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
