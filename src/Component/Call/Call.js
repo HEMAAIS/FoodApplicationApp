@@ -17,23 +17,23 @@ const Call = ({navigation}) => {
                 </TouchableOpacity>
                 <View style={styles.container3}>
                     <View style={styles.appbar}>
-                        <View>
+                        <View style={{backgroundColor: '#FFFFFF',}}>
                             <TouchableOpacity onPress={() => navigation.navigate('CallRinging')}>
                                 <Image source={v1} />
                             </TouchableOpacity>
                         </View>
-                        <View>
+                        <View style={{backgroundColor: '#FFFFFF',}}>
                             <TouchableOpacity onPress={() => navigation.navigate('CallRinging')}>
                                 <Image source={v3} />
                             </TouchableOpacity>
                         </View>
-                        <View>
+                        <View style={{backgroundColor: '#FFFFFF',}}>
                             <TouchableOpacity onPress={() => navigation.navigate('CallRinging')}>
                                 <Image source={v2} />
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Promo')}>
                                 <Image source={end} />
                             </TouchableOpacity>
                         </View>
@@ -48,7 +48,9 @@ const Call = ({navigation}) => {
 export default Call
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+
     },
     container3:{
 marginTop:15
@@ -57,7 +59,8 @@ marginTop:15
         width: 375,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: '#FFFFFF',
     },
 
 });

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, SafeAreaView ,TouchableOpacity} from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -6,14 +6,16 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Button } from 'react-native-elements';
 
 
-export default function SignupProcess({navigation}) {
+export default function SignupProcess({ navigation }) {
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <View style={{ marginTop: 45 }}></View>
                 <View style={{ marginLeft: 5 }}>
-                    <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
-                </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Signup')} >
+                        <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    </TouchableOpacity>              
+                      </View>
                 <View style={styles.container1}>
                     <View style={{ marginTop: 25 }}>
                         <Text style={styles.text}>Fill in your bio to {'\n'}get started</Text>
@@ -24,7 +26,7 @@ export default function SignupProcess({navigation}) {
                 </View>
                 <View style={styles.container2}>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Full Name'  placeholderTextColor={'#000000'}/>
+                        <TextInput style={styles.input1} placeholder='Full Name' placeholderTextColor={'#000000'} />
                         <Ionicons style={styles.icon}
                             name='person-sharp'
                             size={22}
@@ -32,7 +34,7 @@ export default function SignupProcess({navigation}) {
                         />
                     </View>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Country'  placeholderTextColor={'#000000'} />
+                        <TextInput style={styles.input1} placeholder='Country' placeholderTextColor={'#000000'} />
                         <AntDesign style={styles.icon}
                             name='earth'
                             size={22}
@@ -45,7 +47,7 @@ export default function SignupProcess({navigation}) {
                         />
                     </View>
                     <View style={styles.inputContainer}>
-                        <TextInput style={styles.input1} placeholder='Mobile Number'  placeholderTextColor={'#000000'} />
+                        <TextInput style={styles.input1} placeholder='Mobile Number' placeholderTextColor={'#000000'} />
                         <Icon style={styles.icon}
                             name='phone'
                             size={22}
@@ -70,10 +72,10 @@ export default function SignupProcess({navigation}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFFFF',
-          },
+    },
     container1: {
         alignItems: 'center',
-           },
+    },
     text: {
         color: '#000000',
         fontSize: 30,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
     container2: {
         marginTop: 70,
         alignItems: 'center',
-   },
+    },
     input1: {
         paddingStart: 40,
         height: 45,
@@ -112,9 +114,9 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 15,
     },
-    container3:{
-        alignItems:'center',
-        marginTop:175
+    container3: {
+        alignItems: 'center',
+        marginTop: 175
     }
-    
+
 });

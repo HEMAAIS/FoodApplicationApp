@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, SafeAreaView, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput,TouchableOpacity, SafeAreaView, Image } from 'react-native'
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Button } from 'react-native-elements';
@@ -6,14 +6,16 @@ import paypal from '../../Image/paypal.png'
 import payoneer from '../../Image/payoneer.png'
 import visa from '../../Image/visa.png'
 
-export default function PaymentMethod({navigation}) {
+export default function PaymentMethod({ navigation }) {
     return (
 
         <SafeAreaView>
             <View style={styles.container}>
                 <View style={{ marginTop: 45 }}></View>
                 <View style={{ marginLeft: 5 }}>
-                    <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    <TouchableOpacity onPress={() => navigation.navigate('SignupProcess')} >
+                        <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.container1}>
                     <View style={{ marginTop: 20 }}>
@@ -74,6 +76,6 @@ const styles = StyleSheet.create({
     },
     container3: {
         alignItems: 'center',
-        marginTop:110
+        marginTop: 110
     }
 });

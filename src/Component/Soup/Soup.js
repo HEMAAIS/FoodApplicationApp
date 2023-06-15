@@ -9,8 +9,8 @@ import home from '../../Image/home.png'
 import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chat from '../../Image/chat.png'
-import Homemade from '../../Image/Homemade.png'
-import carrot from '../../Image/carrot.png'
+// import Homemade from '../../Image/Homemade.png'
+// import carrot from '../../Image/carrot.png'
 import miso from '../../Image/miso.png'
 import mashroom from '../../Image/mashroom.png'
 import garlic from '../../Image/garlic.png'
@@ -24,6 +24,46 @@ const Soup = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const onChangeSearch = query => setSearchQuery(query);
+    const Soup = [
+        {
+            uri: require("../../Image/Homemade.png"),
+            name: "Tomatto Soup",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/carrot.png"),
+            name: "Carrot Soup",
+            rupees: "3$",
+
+        },
+        {
+            uri: require("../../Image/miso.png"),
+            name: "Misso Soup",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/mashroom.png"),
+            name: "Mashroom Soup",
+            rupees: "3$",
+
+        },
+        {
+            uri: require("../../Image/garlic.png"),
+            name: "Garlic Soup",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/vegitab.png"),
+            name: "Vegetable Soup",
+            rupees: "3$",
+
+        },
+    ];
+
+    const [soups, setSoups] = useState(Soup);
 
     return (
         <ScrollView>
@@ -48,23 +88,46 @@ const Soup = ({ navigation }) => {
                 </View>
                 <View style={styles.container1}>
                     <View style={{ marginLeft: 25, marginTop: 6, marginBottom: 5 }}>
-                        <Button onPress={() => navigation.navigate('Home')}
+                        <Button onPress={() => navigation.navigate('New')}
                             title="Soup"
                             buttonStyle={{ width: 112, height: 44, borderRadius: 4, backgroundColor: '#FFEEDA', }}
                             titleStyle={{ fontSize: 14, fontWeight: 500, color: '#646464', textAlign: 'center' }}
                             icon={
                                 <MaterialCommunityIcons
                                     name="close"
-                                    size={18}
+                                    size={20}
                                     color={'#646464'}
-                                    marginLeft={5}
+                                    marginLeft={18}
                                 />
                             }
                             iconRight
                         />
                     </View>
                 </View>
-                <View style={styles.container2}>
+
+                <View style={{ marginTop: 5 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 30 }}>
+                            <Text style={styles.texta}>Soups</Text>
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -25 }}>
+                        <View style={styles.tamil}>
+                            {soups.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A}>
+                                            <Image source={data.uri}></Image>
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+                {/* <View style={styles.container2}>
                     <View style={styles.head}>
                         <View style={{ marginLeft: 10 }}>
                             <Text style={styles.texta}>Soup</Text>
@@ -106,9 +169,9 @@ const Soup = ({ navigation }) => {
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
-                </View>
+                </View> */}
 
-                <View style={styles.container3}>
+                {/* <View style={styles.container3}>
                     <View style={styles.appbar}>
                         <View>
                             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
@@ -131,7 +194,7 @@ const Soup = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View>
+                </View> */}
                 <View style={{ marginTop: 5 }}></View>
             </View>
         </ScrollView>
@@ -212,12 +275,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around'
     },
+    tamil: {
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin:26
+    },
     A: {
         width: 160,
         height: 140,
         backgroundColor: '#FFEEDA',
         alignItems: 'center',
-        padding: 15
+        padding: 15,
+        marginBottom: 10,
+        marginTop: 10,
+        // marginLeft:13,
+        // marginRight:13,
     },
     input: {
         fontSize: 17,

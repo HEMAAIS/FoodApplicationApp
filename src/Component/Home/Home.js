@@ -1,21 +1,21 @@
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { Searchbar } from 'react-native-paper';
+import { Searchbar, Card } from 'react-native-paper';
 import Filter from '../../Image/Filter.png'
 import ice from '../../Image/ice.png'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button } from 'react-native-elements';
-import burger from '../../Image/burger.png'
-import b1 from '../../Image/b1.png'
+// import burger from '../../Image/burger.png'
+// import b1 from '../../Image/b1.png'
 import home from '../../Image/home.png'
 import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chat from '../../Image/chat.png'
-import cup from '../../Image/cup.png'
-import biscuts from '../../Image/biscuts.png'
-import roll from '../../Image/roll.png'
-import Homemade from '../../Image/Homemade.png'
-import carrot from '../../Image/carrot.png'
+// import cup from '../../Image/cup.png'
+// import biscuts from '../../Image/biscuts.png'
+// import roll from '../../Image/roll.png'
+// import Homemade from '../../Image/Homemade.png'
+// import carrot from '../../Image/carrot.png'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
@@ -25,6 +25,66 @@ const Home = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const onChangeSearch = query => setSearchQuery(query);
+
+    const Popular = [
+        {
+            uri: require("../../Image/burger.png"),
+            name: "Zinger Burger",
+            rupees: "2$",
+        },
+        {
+            uri: require("../../Image/roll.png"),
+            name: "Roll Paratha",
+            rupees: "3$",
+
+        },
+    ];
+    const Desert = [
+        {
+            uri: require("../../Image/biscuts.png"),
+            name: "Biscuts",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/cup.png"),
+            name: "Cup Cake",
+            rupees: "3$",
+
+        },
+    ];
+    const Burger = [
+        {
+            uri: require("../../Image/b1.png"),
+            name: "Cup Cake",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/burger.png"),
+            name: "Cup Cake",
+            rupees: "3$",
+
+        },
+    ];
+    const Soup = [
+        {
+            uri: require("../../Image/Homemade.png"),
+            name: "Tomatto Soup",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/carrot.png"),
+            name: "Carrot Soup",
+            rupees: "3$",
+
+        },
+    ];
+    const [populars, setPopulars] = useState(Popular);
+    const [deserts, setDeserts] = useState(Desert);
+    const [burgers, setBurgers] = useState(Burger);
+    const [soups, setSoups] = useState(Soup);
 
     return (
         <ScrollView>
@@ -62,7 +122,118 @@ const Home = ({ navigation }) => {
                         <Image source={ice} style={styles.ice} />
                     </View>
                 </View>
-                <View style={styles.container2}>
+                <View style={{ marginTop: 8 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 0 }}>
+                            <Text style={styles.texta}>Popular Menu</Text>
+                        </View>
+                        <View style={{ marginLeft: 180 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Burger')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -5 }}>
+                        <View style={styles.tamil}>
+                            {populars.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A}>
+                                            <Image source={data.uri}></Image>
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+                <View style={{ marginTop: -3 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 10 }}>
+                            <Text style={styles.texta}>Deserts</Text>
+                        </View>
+                        <View style={{ marginLeft: 220 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Burger')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -5 }}>
+                        <View style={styles.tamil}>
+                            {deserts.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A1}>
+                                            <Image source={data.uri}></Image>
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+                <View style={{ marginTop: -4 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 10 }}>
+                            <Text style={styles.texta}>Burgers</Text>
+                        </View>
+                        <View style={{ marginLeft: 220 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('XBurger')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -3 }}>
+                        <View style={styles.tamil}>
+                            {burgers.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A1}>
+                                            <Image source={data.uri}></Image>
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+                <View style={{ marginTop: -4 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 10 }}>
+                            <Text style={styles.texta}>Soups</Text>
+                        </View>
+                        <View style={{ marginLeft: 230 }}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Soup')}>
+                                <Text style={styles.textb}>View More</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -8 }}>
+                        <View style={styles.tamil}>
+                            {soups.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A1}>
+                                            <Image source={data.uri}></Image>
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+
+                {/* <View style={styles.container2}>
+                    
+
                     <View style={styles.head}>
                         <View style={{ marginLeft: 5 }}>
                             <Text style={styles.texta}>Popular Menu</Text>
@@ -149,8 +320,8 @@ const Home = ({ navigation }) => {
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
-                </View>
-                <View style={styles.container3}>
+                </View> */}
+                {/* <View style={styles.container3}>
                     <View style={styles.appbar}>
                         <View>
                             <TouchableOpacity onPress={() => navigation.navigate('XBurger')}>
@@ -173,7 +344,7 @@ const Home = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View>
+                </View> */}
                 <View style={{ marginTop: 5 }}></View>
             </View>
         </ScrollView>
@@ -261,8 +432,26 @@ const styles = StyleSheet.create({
         height: 140,
         backgroundColor: '#FFEEDA',
         alignItems: 'center',
-        padding: 15
+        padding: 15,
+        //   marginLeft:16,
+        //   marginRight:16,
+        marginBottom: 10,
+        marginTop: 10
+        // margin:18 
     },
+    A1: {
+        width: 160,
+        height: 140,
+        backgroundColor: '#FFEEDA',
+        alignItems: 'center',
+        padding: 15,
+          marginLeft:11.5,
+          marginRight:11.5,
+        marginBottom: 10,
+        marginTop: 10
+        // margin:18 
+    },
+  
     input: {
         fontSize: 17,
         fontWeight: 600,
@@ -276,7 +465,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     container3: {
-        // marginTop: -65
+        marginTop: 15
     },
     appbar: {
         width: 335,
@@ -286,5 +475,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around'
-    }
+    },
+    tamil: {
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    
 });

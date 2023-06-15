@@ -1,17 +1,19 @@
-import { View, Text, StyleSheet, TextInput, SafeAreaView, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, SafeAreaView, Image } from 'react-native'
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button } from 'react-native-elements';
 import location from '../../Image/location.png'
 
-export default function SetLocation({navigation}) {
+export default function SetLocation({ navigation }) {
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <View style={{ marginTop: 45 }}></View>
                 <View style={{ marginLeft: 10 }}>
-                    <Ionicons name="chevron-back-sharp" size={25} color={'#EC2578'} />
+                    <TouchableOpacity onPress={() => navigation.navigate('UploadPreview')} >
+                        <Ionicons name="chevron-back-sharp" size={25} color={'#EC2578'} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.container1}>
                     <View style={{ marginTop: 10 }}>
@@ -29,7 +31,7 @@ export default function SetLocation({navigation}) {
                         <Button
                             title="Set your location"
                             buttonStyle={{ width: 275, height: 50, borderRadius: 4, borderColor: '#EC2578', backgroundColor: '#FFFFFF', borderWidth: 1, borderStyle: 'dashed', }}
-                            titleStyle={{ fontSize: 12, fontWeight: 400, color: '#EC2578', marginLeft:10 }}
+                            titleStyle={{ fontSize: 12, fontWeight: 400, color: '#EC2578', marginLeft: 10 }}
                             icon={
                                 <MaterialCommunityIcons
                                     name="plus-box"

@@ -19,7 +19,9 @@
     "react-native": "0.71.8",
     "react-native-elements": "^3.4.3",
     "react-native-icons": "^0.7.1",
-    "react-native-paper": "^5.8.0"
+    "react-native-maps": "^1.7.1",
+    "react-native-paper": "^5.8.0",
+    "react-native-ratings": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

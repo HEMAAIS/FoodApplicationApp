@@ -3,7 +3,7 @@ import React from 'react'
 import round from '../../Image/round.png'
 import { Button } from 'react-native-elements';
 
-export default function Success({navigation}) {
+export default function Congrats({navigation}) {
     return (
         <SafeAreaView>
             <View style={styles.container}>
@@ -16,13 +16,13 @@ export default function Success({navigation}) {
                         <Text style={styles.text}>Congrats!</Text>
                     </View>
                     <View style={{ marginTop: 15 }}>
-                        <Text style={styles.text1}>Your Profile Is Ready To Use</Text>
+                        <Text style={styles.text1}>Your Order Confirmed</Text>
                     </View>
                 </View>
                 <View style={styles.container2}>
                     <View >
-                        <Button onPress={() => navigation.navigate('New')}
-                            title="Try Order"
+                        <Button onPress={() => navigation.navigate('Truckorder')}
+                            title="Track Order"
                             buttonStyle={{ backgroundColor: '#EC2578', width: 315, height: 50, borderRadius: 4 }}
                             titleStyle={{ fontSize: 17, fontWeight: 600 }}
                         />

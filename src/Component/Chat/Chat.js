@@ -10,16 +10,18 @@ import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chats from '../../Image/chats.png'
 
-const Chat = ({navigation}) => {
+const Chat = ({ navigation }) => {
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <View style={{ marginTop: 45 }}></View>
                 <View style={{ marginLeft: 5 }}>
-                    <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
-                </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('New')} >
+                        <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    </TouchableOpacity>            
+                        </View>
                 <View style={styles.container1}>
-                    <View style={{ marginTop: 20, marginLeft: 15 }}>
+                    <View style={{ marginTop: 8, marginLeft: 15 }}>
                         <Text style={styles.text}>Chat</Text>
                     </View>
                 </View>
@@ -79,7 +81,7 @@ const Chat = ({navigation}) => {
                         </View>
                     </View>
                 </View>
-                <View style={styles.container5}>
+                {/* <View style={styles.container5}>
                     <View style={styles.appbar}>
                         <View>
                             <TouchableOpacity onPress={() => navigation.navigate('XBurger')}>
@@ -102,8 +104,8 @@ const Chat = ({navigation}) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View>
-                <View style={{ marginTop: 5 }}></View>
+                </View> */}
+                <View style={{ marginTop: 255 }}></View>
             </View>
         </SafeAreaView>
     )
@@ -125,15 +127,21 @@ const styles = StyleSheet.create({
     },
     container2: {
         alignItems: 'center',
-        marginTop: 50,
+        marginTop: 28,
     },
     chat1: {
         width: 365,
         height: 81,
         backgroundColor: '#FFFFFF',
         // backgroundColor: 'red',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingTop: 10,
+        paddingBottom: 15,
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        shadowColor: '#FFFFF',
+        borderWidth: 0.2,
+        marginTop: 5,
+        marginBottom: 5,
 
     },
     head: {
@@ -166,12 +174,18 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     chat2: {
-        width: 355,
+        width: 365,
         height: 81,
         backgroundColor: '#FFFFFF',
         // backgroundColor: 'green',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingTop: 10,
+        paddingBottom: 15,
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        shadowColor: '#FFFFF',
+        borderWidth: 0.2,
+        marginTop: 5,
+        marginBottom: 5,
 
     },
     time2: {
@@ -186,12 +200,18 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     chat3: {
-        width: 355,
+        width: 365,
         height: 81,
         backgroundColor: '#FFFFFF',
         // backgroundColor: 'blue',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingTop: 10,
+        paddingBottom: 15,
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        shadowColor: '#FFFFF',
+        borderWidth: 0.2,
+        marginTop: 5,
+        marginBottom: 5,
 
     },
     time3: {
@@ -203,7 +223,7 @@ const styles = StyleSheet.create({
     },
     container5: {
         alignItems: 'center',
-        marginTop: 230
+        marginTop: 220
     },
     appbar: {
         width: 365,

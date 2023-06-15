@@ -9,12 +9,12 @@ import home from '../../Image/home.png'
 import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chat from '../../Image/chat.png'
-import burger from '../../Image/burger.png'
-import roll from '../../Image/roll.png'
-import pizza from '../../Image/pizza.png'
-import beef from '../../Image/beef.png'
-import b1 from '../../Image/b1.png'
-import b2 from '../../Image/b2.png'
+// import burger from '../../Image/burger.png'
+// import roll from '../../Image/roll.png'
+// import pizza from '../../Image/pizza.png'
+// import beef from '../../Image/beef.png'
+// import b1 from '../../Image/b1.png'
+// import b2 from '../../Image/b2.png'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // const Tab = createBottomTabNavigator();
@@ -24,6 +24,46 @@ const Burger = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const onChangeSearch = query => setSearchQuery(query);
+
+    const Popular = [
+        {
+            uri: require("../../Image/burger.png"),
+            name: "Zinger Burger",
+            rupees: "2$",
+        },
+        {
+            uri: require("../../Image/roll.png"),
+            name: "Roll Paratha",
+            rupees: "3$",
+
+        },
+        {
+            uri: require("../../Image/b1.png"),
+            name: "Burger",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/b2.png"),
+            name: "Sandwich",
+            rupees: "3$",
+
+        },
+        {
+            uri: require("../../Image/pizza.png"),
+            name: "Pizza roll",
+            rupees: "2$",
+
+        },
+        {
+            uri: require("../../Image/beef.png"),
+            name: "Beef burger",
+            rupees: "3$",
+
+        },
+    ];
+
+    const [populars, setPopulars] = useState(Popular);
 
     return (
         <ScrollView>
@@ -40,13 +80,43 @@ const Burger = ({ navigation }) => {
                             onChangeText={onChangeSearch}
                             value={searchQuery}
                         />
+                        
                         <Image source={Filter} style={styles.Filter} />
+                        {/* </TouchableOpacity> */}
                     </View>
                     <View>
                         <MaterialCommunityIcons name='bell-badge-outline' size={35} color={'#EC2578'} style={{ marginLeft: 20 }} />
                     </View>
                 </View>
-                <View style={styles.container2}>
+
+                <View style={{ marginTop: 5 }}>
+                    <View style={styles.head}>
+                        <View style={{ marginLeft: 30 }}>
+                           
+                                <Text style={styles.texta}>Popular Menu</Text>
+                           
+                        </View>
+                    </View>
+                    <View style={{ marginTop: -25 }}>
+                        <View style={styles.tamil}>
+                            {populars.map((data) => {
+                                return (
+                                    <TouchableOpacity>
+                                        <View style={styles.A}>
+                                        <TouchableOpacity onPress={() => navigation.navigate('New')}>
+                                            <Image source={data.uri}></Image>
+                                           </TouchableOpacity> 
+                                            <Text style={styles.input}>{data.name}</Text>
+                                            <Text style={styles.input1}>{data.rupees}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </View>
+                    </View>
+                </View>
+
+                {/* <View style={styles.container2}>
                     <View style={styles.head}>
                         <View style={{ marginLeft: 5 }}>
                             <Text style={styles.texta}>Popular Menu</Text>
@@ -88,9 +158,9 @@ const Burger = ({ navigation }) => {
                             <Text style={styles.input1}>3$</Text>
                         </View>
                     </View>
-                </View>
+                </View> */}
 
-                <View style={styles.container3}>
+                {/* <View style={styles.container3}>
                     <View style={styles.appbar}>
                         <View>
                             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
@@ -113,7 +183,7 @@ const Burger = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View>
+                </View> */}
                 <View style={{ marginTop: 5 }}></View>
             </View>
         </ScrollView>
@@ -196,12 +266,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around'
     },
+    tamil: {
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 26
+    },
     A: {
         width: 160,
         height: 140,
         backgroundColor: '#FFEEDA',
         alignItems: 'center',
-        padding: 15
+        padding: 15,
+        marginBottom: 10,
+        marginTop: 10,
+        // marginLeft:13,
+        // marginRight:13,
     },
     input: {
         fontSize: 17,

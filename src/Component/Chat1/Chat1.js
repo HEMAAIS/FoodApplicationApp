@@ -13,16 +13,18 @@ import basket from '../../Image/basket.png'
 import user from '../../Image/user.png'
 import chats from '../../Image/chats.png'
 
-const Chat1 = ({navigation}) => {
+const Chat1 = ({ navigation }) => {
     return (
         <SafeAreaView>
             <View style={styles.container}>
                 <View style={{ marginTop: 45 }}></View>
                 <View style={{ marginLeft: 5 }}>
-                    <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    <TouchableOpacity onPress={() => navigation.navigate('Chat')} >
+                        <Ionicons name="chevron-back-sharp" size={25} color={'#000000'} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.container1}>
-                    <View style={{ marginTop: 20, marginLeft: 15 }}>
+                    <View style={{ marginTop: 8, marginLeft: 15 }}>
                         <Text style={styles.text}>Chat</Text>
                     </View>
                 </View>
@@ -71,7 +73,7 @@ const Chat1 = ({navigation}) => {
                         <Feather name="send" size={25} color={'#EC2578'} />
                     </View>
                 </View>
-                <View style={{ marginTop: 34 }}></View>
+                <View style={{ marginTop: 134 }}></View>
             </View>
         </SafeAreaView>
     )
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
     },
     container2: {
         alignItems: 'center',
-        marginTop: 50,
+        marginTop: 28,
     },
     chat1: {
         width: 365,
