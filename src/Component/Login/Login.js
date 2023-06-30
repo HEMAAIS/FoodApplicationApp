@@ -30,7 +30,7 @@ export default function Login({navigation}) {
                 <View style={styles.container2}>
                     <Card style={{ height: 385, width: 300, borderRadius: 25 }}>
                         <View style={{ alignItems: 'center', marginTop: 20 }}>
-                            <Text style={styles.login}>Login</Text>
+                            <Text style={styles.login}>SignIn</Text>
                         </View>
                         <View style={{ alignItems: 'center', marginTop: 20 }}>
                             <View style={styles.inputContainer}>
